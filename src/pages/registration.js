@@ -32,6 +32,7 @@ const Registration = () => {
   const [aadhar,setAadhar] = useState('');
   const [address,SetAddress] = useState('');
   const [phone,setPhone] = useState('');
+  const [aadhar,setAadhar] = useState('');
   const [age,setAge] = useState('');
   const [PartyDis,setPartyDis] = useState('');
   const [qualification,setQualification] = useState('');
@@ -167,6 +168,16 @@ const Registration = () => {
           placeholder=''
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className='form-input'
+        />
+        </div>
+        <div className='form-row'>
+        <label className='form-label'>ஆதார் எண் :</label>
+       <input
+          type="text"
+          placeholder=""
+          value={aadhar}
+          onChange={(e) => setAadhar(e.target.value)}
           className='form-input'
         />
         </div>
