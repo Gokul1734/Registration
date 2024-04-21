@@ -200,7 +200,7 @@ const Registration = () => {
         />
         </div>
         <div className='form-row'>
-        <label className='form-label'>வகுப்பு : </label>
+        <label className='form-label'>வகுப்பு /FC/BC/MBC/DNT/SC/ST : </label>
         <input
           type="text"
           placeholder=""
