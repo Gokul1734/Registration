@@ -80,6 +80,8 @@ const Registration = () => {
          Union:Union
 
        });
+       const imgRef = sref(Store,`profiles/${Name}`);
+       uploadBytes(imgRef, img);
        alert(`Added ${email}'s message to database!`);
      } catch (error) {
        console.log(error);
@@ -249,7 +251,6 @@ const Registration = () => {
         <div>
          <label className='form-label'>புகைப்படம் : </label>
          <input type="file" className='form-input' onChange={(e) => {setImg(e.target.files[0])}} />
-         <button onClick={handleUpload} >Upload</button>
         </div>
         <button type="submit">Register</button>
       </form>
