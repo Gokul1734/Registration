@@ -9,6 +9,7 @@
 .form-header {
  text-align: center;
  background-color:#a2d469;
+ width:max-content;
 }
 
 p {
