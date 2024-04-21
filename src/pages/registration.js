@@ -80,6 +80,7 @@ const Registration = () => {
          address:address,
          phone : phone,
          PartyDis:PartyDis,
+         aadhar:aadhar,
          qualification:qualification,
          caste:caste,
          yoj:yoj,
