@@ -52,6 +52,18 @@ button {
  cursor: pointer;
 }
 
-.screen {
- width: fit-content;
+
+@media only screen and (max-width: 600px) {
+ .form-container {
+   padding: 10px;
+ }
+
+ .form-label {
+   font-size: 12px;
+ }
+
+ .form-input,
+ .button {
+   font-size: 14px;
+ }
 }
