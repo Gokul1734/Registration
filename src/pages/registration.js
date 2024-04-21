@@ -29,6 +29,7 @@ const db = getDatabase(app);
 
 const Registration = () => {
   const [email, setEmail] = useState('');
+  const [aadhar,setAadhar] = useState('');
   const [address,SetAddress] = useState('');
   const [phone,setPhone] = useState('');
   const [age,setAge] = useState('');
@@ -91,6 +92,19 @@ const Registration = () => {
 
        });
        alert(`Added ${email}'s message to database!`);
+       setName('');
+       setAadhar('');
+       setAge('')
+       setCaste('');
+       setCurrentPost('');
+       setEmail('');
+       setOthergrp('');
+       setPartyDis('');
+       setPartypost2017('');
+       setPhone('');
+       setQualification('')
+       setYoj('');
+       setUnion('');
      } catch (error) {
        console.log(error);
      }
@@ -106,7 +120,7 @@ const Registration = () => {
         </div>
         <div>
         <img src={jayalalitha} />
-         <p style={{width:'600px'}}>  “மக்களால் நான் மக்களுக்காகவே நான்” </p>
+         <p style={{alignItems:'center'}}>  “மக்களால் நான் மக்களுக்காகவே நான்” </p>
         <p>-புரட்சித்தலைவி ஜெ ஜெயலலிதா</p>
         </div>
         </div>
@@ -122,6 +136,7 @@ const Registration = () => {
           value={Name}
           onChange={(e) => setName(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -132,6 +147,7 @@ const Registration = () => {
           value={address}
           onChange={(e) => SetAddress(e.target.value)}
           className='form-input'
+          required
         /></div>
         <div className='form-row'>
         <label className='form-label'>தொலைபேசி எண்: </label>
@@ -141,6 +157,7 @@ const Registration = () => {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -154,6 +171,16 @@ const Registration = () => {
         />
         </div>
         <div className='form-row'>
+        <label className='form-label'>ஆதார் எண் :</label>
+       <input
+          type="text"
+          placeholder=""
+          value={aadhar}
+          onChange={(e) => setAadhar(e.target.value)}
+          className='form-input'
+        />
+        </div>
+        <div className='form-row'>
         <label className='form-label'>கழக அமைப்பு மாவட்டம் : </label>
         <input
           type="text"
@@ -161,6 +188,7 @@ const Registration = () => {
           value={PartyDis}
           onChange={(e) => setPartyDis(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -171,6 +199,7 @@ const Registration = () => {
           value={Union}
           onChange={(e) => setUnion(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -181,6 +210,7 @@ const Registration = () => {
           value={qualification}
           onChange={(e) => setQualification(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -191,6 +221,7 @@ const Registration = () => {
           value={age}
           onChange={(e) => setAge(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -201,6 +232,7 @@ const Registration = () => {
           value={caste}
           onChange={(e) => setCaste(e.target.value)}
           className='form-input'
+          required
         />
         </div>
          <div className='form-row'>
