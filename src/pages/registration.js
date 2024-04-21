@@ -32,7 +32,6 @@ const Registration = () => {
   const [aadhar,setAadhar] = useState('');
   const [address,SetAddress] = useState('');
   const [phone,setPhone] = useState('');
-  const [aadhar,setAadhar] = useState('');
   const [age,setAge] = useState('');
   const [PartyDis,setPartyDis] = useState('');
   const [qualification,setQualification] = useState('');
@@ -93,25 +92,12 @@ const Registration = () => {
 
        });
        alert(`Added ${email}'s message to database!`);
-       setName('');
-       setAadhar('');
-       setAge('')
-       setCaste('');
-       setCurrentPost('');
-       setEmail('');
-       setOthergrp('');
-       setPartyDis('');
-       setPartypost2017('');
-       setPhone('');
-       setQualification('')
-       setYoj('');
-       setUnion('');
      } catch (error) {
        console.log(error);
      }
  };
   return (
-    <div style={{width:'fit-content'}}>
+    <div className='screen'>
       <div className="form-header">
         <div style={{display:'flex',alignItems:'center',marginLeft:'200px',gap:'100px'}}>
         <div  style={{alignItems:'center'}} >
@@ -119,9 +105,9 @@ const Registration = () => {
         <p>“உழைக்கும் மக்களே ஒன்று சேருங்கள்”    </p>
         <p>- புரட்சித்தலைவர் எம்.ஜி.ஆர்</p>
         </div>
-        <div style={{width:'600px'}}>
+        <div>
         <img src={jayalalitha} />
-         <p >  “மக்களால் நான் மக்களுக்காகவே நான்” </p>
+         <p style={{width:'600px'}}>  “மக்களால் நான் மக்களுக்காகவே நான்” </p>
         <p>-புரட்சித்தலைவி ஜெ ஜெயலலிதா</p>
         </div>
         </div>
@@ -137,7 +123,6 @@ const Registration = () => {
           value={Name}
           onChange={(e) => setName(e.target.value)}
           className='form-input'
-          required
         />
         </div>
         <div className='form-row'>
@@ -169,6 +154,7 @@ const Registration = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -179,16 +165,7 @@ const Registration = () => {
           value={aadhar}
           onChange={(e) => setAadhar(e.target.value)}
           className='form-input'
-        />
-        </div>
-        <div className='form-row'>
-        <label className='form-label'>ஆதார் எண் :</label>
-       <input
-          type="text"
-          placeholder=""
-          value={aadhar}
-          onChange={(e) => setAadhar(e.target.value)}
-          className='form-input'
+          required
         />
         </div>
         <div className='form-row'>
@@ -199,7 +176,6 @@ const Registration = () => {
           value={PartyDis}
           onChange={(e) => setPartyDis(e.target.value)}
           className='form-input'
-          required
         />
         </div>
         <div className='form-row'>
@@ -210,7 +186,6 @@ const Registration = () => {
           value={Union}
           onChange={(e) => setUnion(e.target.value)}
           className='form-input'
-          required
         />
         </div>
         <div className='form-row'>
@@ -221,7 +196,6 @@ const Registration = () => {
           value={qualification}
           onChange={(e) => setQualification(e.target.value)}
           className='form-input'
-          required
         />
         </div>
         <div className='form-row'>
@@ -232,7 +206,6 @@ const Registration = () => {
           value={age}
           onChange={(e) => setAge(e.target.value)}
           className='form-input'
-          required
         />
         </div>
         <div className='form-row'>
@@ -243,7 +216,6 @@ const Registration = () => {
           value={caste}
           onChange={(e) => setCaste(e.target.value)}
           className='form-input'
-          required
         />
         </div>
          <div className='form-row'>
