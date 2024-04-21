@@ -111,7 +111,7 @@ const Registration = () => {
      }
  };
   return (
-    <div className='screen'>
+    <div style={{width:'fit-content'}}>
       <div className="form-header">
         <div style={{display:'flex',alignItems:'center',marginLeft:'200px',gap:'100px'}}>
         <div  style={{alignItems:'center'}} >
