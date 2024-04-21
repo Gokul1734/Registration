@@ -6,6 +6,7 @@ import { getDatabase, ref, set } from "firebase/database";
 import  './registration.css';
 import mgr from '../images/Picture1.jpg'
 import jayalalitha from '../images/Picture2.png'
+import { getStorage, uploadBytes,ref as sref } from "firebase/storage";
 
 import {
   initializeAuth,
@@ -25,7 +26,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const Store = getStorage(app);
 const db = getDatabase(app);
+
+
 
 const Registration = () => {
   const [email, setEmail] = useState('');
@@ -43,32 +47,17 @@ const Registration = () => {
   const [Name,setName] = useState('');
   const [Union,setUnion] = useState('');
   const [error,setError] = useState('');
+  const [img,setImg] = useState('');
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+ const handleUpload = () => {
+  // // console.log(img);
+  const imgRef = sref(Store,`profiles/${Name}`);
+  uploadBytes(imgRef, img).then((snapshot) => {
+   alert('Uploaded Profile Photo')
+ });
 
-  //   // Basic form validation
-  //   if (!email || !password || !confirmPassword) {
-  //     setError('Please fill in all fields');
-  //     return;
-  //   }
+ }
 
-  //   if (password !== confirmPassword) {
-  //     setError('Passwords do not match');
-  //     return;
-  //   }
-
-  //   // If validation passes, you can proceed with registration logic
-  //   // For simplicity, we'll just log the data to console
-  //   console.log('Email:', email);
-  //   console.log('Password:', password);
-
-  //   // Reset form fields and error message
-  //   setEmail('');
-  //   setPassword('');
-  //   setConfirmPassword('');
-  //   setError('');
-  // };
 
   const handleSubmit = (event) => {
    event.preventDefault();
@@ -80,7 +69,6 @@ const Registration = () => {
          address:address,
          phone : phone,
          PartyDis:PartyDis,
-         aadhar:aadhar,
          qualification:qualification,
          caste:caste,
          yoj:yoj,
@@ -98,7 +86,7 @@ const Registration = () => {
      }
  };
   return (
-    <div className='screen'>
+    <div >
       <div className="form-header">
         <div style={{display:'flex',alignItems:'center',marginLeft:'200px',gap:'100px'}}>
         <div  style={{alignItems:'center'}} >
@@ -257,6 +245,11 @@ const Registration = () => {
           onChange={(e) => setCurrentPost(e.target.value)}
           className='form-input'
         />
+        </div>
+        <div>
+         <label className='form-label'>புகைப்படம் : </label>
+         <input type="file" className='form-input' onChange={(e) => {setImg(e.target.files[0])}} />
+         <button onClick={handleUpload} >Upload</button>
         </div>
         <button type="submit">Register</button>
       </form>
