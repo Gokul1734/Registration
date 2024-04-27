@@ -82,7 +82,7 @@ const Registration = () => {
        });
        const imgRef = sref(Store,`profiles/${Name}`);
        uploadBytes(imgRef, img);
-       alert(`Added ${email}'s message to database!`);
+       alert(`உங்கள் மனு ஏற்றுக்கொள்ளப்பட்டுள்ளது !`);
      } catch (error) {
        console.log(error);
      }
