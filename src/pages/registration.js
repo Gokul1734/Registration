@@ -51,7 +51,7 @@ const Registration = () => {
 
  const handleUpload = () => {
   // // console.log(img);
-  const imgRef = sref(Store,`profiles/${Name}`);
+  const imgRef = sref(Store,`profiles/${Name} - ${phone}`);
   uploadBytes(imgRef, img).then((snapshot) => {
    alert('Uploaded Profile Photo')
  });
