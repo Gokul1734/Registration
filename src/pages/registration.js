@@ -83,9 +83,6 @@ const Registration = () => {
        uploadBytes(imgRef, img);
        setShowSuccess(true);
        // alert(`உங்கள் மனு ஏற்றுக்கொள்ளப்பட்டுள்ளது !`);
-       setTimeout(() => {
-        setShowSuccess(false);
-      }, 10000);
      } catch (error) {
        console.log(error);
      }
