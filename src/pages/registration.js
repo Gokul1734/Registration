@@ -48,13 +48,12 @@ const Registration = () => {
   const [Union,setUnion] = useState('');
   const [error,setError] = useState('');
   const [img,setImg] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
  const handleUpload = () => {
   // // console.log(img);
-  const imgRef = sref(Store,`profiles/${Name} - ${phone}`);
-  uploadBytes(imgRef, img).then((snapshot) => {
-   alert('Uploaded Profile Photo')
- });
+  const imgRef = sref(Store,`profiles/${Name}(${phone})`);
+  uploadBytes(imgRef, img);
 
  }
 
@@ -82,7 +81,11 @@ const Registration = () => {
        });
        const imgRef = sref(Store,`profiles/${Name}`);
        uploadBytes(imgRef, img);
-       alert(`உங்கள் மனு ஏற்றுக்கொள்ளப்பட்டுள்ளது !`);
+       setShowSuccess(true);
+       // alert(`உங்கள் மனு ஏற்றுக்கொள்ளப்பட்டுள்ளது !`);
+       setTimeout(() => {
+        setShowSuccess(false);
+      }, 10000);
      } catch (error) {
        console.log(error);
      }
@@ -200,7 +203,7 @@ const Registration = () => {
         />
         </div>
         <div className='form-row'>
-        <label className='form-label'>வகுப்பு /FC/BC/MBC/DNT/SC/ST : </label>
+        <label className='form-label'>வகுப்பு : </label>
         <input
           type="text"
           placeholder=""
@@ -252,7 +255,8 @@ const Registration = () => {
          <label className='form-label'>புகைப்படம் : </label>
          <input type="file" className='form-input' onChange={(e) => {setImg(e.target.files[0])}} />
         </div>
-        <button type="submit">Register</button>
+        {!showSuccess && <button type="submit">Register</button>}
+        {showSuccess && <div style={{ color: 'green',padding:'20px' }}>உங்கள் மனு ஏற்றுக்கொள்ளப்பட்டுள்ளது !</div>}
       </form>
     </div>
   );
